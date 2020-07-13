@@ -2,6 +2,8 @@ const bodyParser = require("body-parser")
 const express = require("express")
 const nodemailer = require("nodemailer")
 const cors = require("cors")
+const dotenv = require("dotenv")
+dotenv.config()
 
 const app = express()
 
@@ -35,4 +37,4 @@ app.post("/contact", function (req, res) {
     )
 })
 
-app.listen(PORT)
+app.listen(PORT, () => console.log(`running on ${PORT}`))
